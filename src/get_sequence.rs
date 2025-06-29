@@ -34,7 +34,7 @@ impl Task {
                 let mut sub_ret = child.get_sequence_(already, path)?;
                 ret.append(&mut sub_ret);
             } else if path.contains(&child.id) {
-                return Err(format!("cycle {:?}", path));
+                return Err(format!("cycle {path:?}"));
             }
         }
         path.pop();
